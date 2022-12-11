@@ -1,0 +1,756 @@
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: url(./1.jpg);
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .portfolio, .skills, .works, .contact, footer{
+    font-family: 'Poppins', sans-serif;
+}
+.home .home-content,
+.about .about-content,
+.portfolio .portfolio-content,
+.skills .skills-content,
+.works .works-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+/* navbar styling */
+.navbar{
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #000;
+    font-family:cursive;
+    padding-left: 20px;
+    font-size: 28px;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: rgb(0, 8, 255);
+}
+.navbar.sticky .menu li a:hover{
+    color: #000;
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: #000;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: crimson;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #000;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+
+/* home section styling */
+.home{
+    background-image: url("../1.jpg");
+    height: 100vh;
+    color: rgb(5, 5, 5);
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width{
+  width: 100%;
+  display: flex;
+}
+.home .home-content .left{
+    width: 45%;
+}
+.home .home-content .left img{
+    margin-top: 30px;
+    height: 450px;
+    width: 450px;
+    object-fit: cover;
+    border-radius: 30%;
+}
+
+.home .home-content .right{
+    width: 55%;
+    padding-top: 10rem;
+}
+
+.home .home-content .right h1{
+    font-size: 7.5em;
+    font-family: 'Aloja';
+    color: blue ;
+    font-weight: 100;
+    letter-spacing: .123rem;
+    line-height: 1em;
+
+}
+.home .home-content .right h3{
+    font-size: 2.5em;
+    font-family: 'Aloja';
+    color: #000 ;
+    font-weight: 500;
+    letter-spacing: .123rem;
+    line-height: 1em;
+    padding-bottom: 5em;
+
+}
+.home .home-content .right a{
+    font-size: 20px;
+    margin-left: 9em;
+    text-decoration: underline;
+    letter-spacing: .123rem;
+    color: #000;
+}
+.home .home-content a:hover{
+    background: none;
+    text-decoration: none;
+}
+
+/* about section styling */
+
+.about .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family:cursive;
+}
+
+.about{
+    background-image: url("../2.jpg");
+    height: 100vh;
+    color: rgb(5, 5, 5);
+    min-height: 800px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.about .about-content .left{
+    width: 45%;
+}
+.about .about-content .left img{
+    height: 550px;
+    width: 400px;
+}
+.about .about-content .right{
+    width: 55%;
+}
+
+.about .about-content .right p{
+    text-align: justify;
+    margin-top: -20px;
+    font-size: 28px;
+    line-height: 1.5em;
+    letter-spacing: .2em;
+    font-weight: 350;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* project section styling */
+.project, .teams{
+    color:#fff;
+    background: #111;
+}
+.project .title::before,
+.teams .title::before{
+    background: #fff;
+}
+.project .title::after,
+.teams .title::after{
+    background: #111;
+    content: "what i provide";
+}
+.project .serv-content .card{
+    width: calc(33% - 20px);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 50px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.project .serv-content .card:hover{
+    background: crimson;
+}
+.project .serv-content .card .box{
+    transition: all 0.3s ease;
+}
+.project .serv-content .card:hover .box{
+    transform: scale(1.05);
+}
+.project .serv-content .card i{
+    font-size: 50px;
+    color: crimson;
+    transition: color 0.3s ease;
+}
+.project .serv-content .card:hover i{
+    color: #fff;
+}
+.project .serv-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+.skills{
+    padding-top: 15rem;
+    background-image: url("../3.jpg");
+    height: 100vh;
+    color: rgb(5, 5, 5);
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.skills .skills-content .column{
+    width: calc(50% - 30px);
+}
+.skills .skills-content .left .text{
+    font-size: 35px;
+    font-weight: 600;
+    font-family: cursive;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+}
+.skills .skills-content .left p{
+    text-align: justify;
+    font-size: 15px;
+    color: #fff;
+}
+.skills .skills-content .right .bars{
+    margin-bottom: 55px;
+}
+.skills .skills-content .right .info{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skills-content .right span{
+    font-weight: 500;
+    font-size: 18px;
+}
+.skills .skills-content .right .line{
+    height: 25px;
+    width: 100%;
+    border-radius: 20px;
+    background: pink;
+    position: relative;
+}
+.skills .skills-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    border-radius: 20px;
+    top: 0;
+    background: rgb(255, 255, 255);
+}
+.skills-content .right .java::before{
+    width: 76%;
+}
+.skills-content .right .js::before{
+    width: 50%;
+}
+.skills-content .right .php::before{
+    width: 35%;
+}
+.skills-content .right .html::before{
+    width: 42%;
+}
+
+
+/* portfolio section styling */
+
+
+.portfolio .portfolio-content .column{
+    width: calc(60% - 30px);
+}
+.portfolio{
+    background-image: url("../4.jpg");
+    height: 100vh;
+    color: rgb(5, 5, 5);
+    min-height: 800px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.portfolio .portfolio-content p{
+    font-size: 15px;
+}
+.portfolio .portfolio-content .text{
+    font-size: 45px;
+    font-family: cursive;
+    margin-bottom: 2em;
+}
+.portfolio .portfolio-content .left{
+    width: 65%;
+}
+.portfolio .portfolio-content .left img{
+    height: 420px;
+    width: 600px;
+}
+.portfolio .portfolio-content .right{
+    width: 35%;
+}
+.portfolio .portfolio-content .right img{
+    height: 300px;
+    margin-bottom: 15em;
+    width: 500px;
+}
+
+.portfolio .portfolio-content .right p{
+    text-align: justify;
+    margin-top: -20px;
+    font-size: 28px;
+    line-height: 1.5em;
+    letter-spacing: .2em;
+    font-weight: 350;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.portfolio .portfolio-content .bottom-text a{
+    color: #000;
+    font-family: 800;
+    font-size: 17px;
+    display: flex;
+    margin-left: 2rem;
+}
+.portfolio  .bottom-text{
+    border-radius: 20px;
+    margin-left: 20em;
+    padding: 13px;
+    background: rgb(240, 174, 240);
+    
+}
+
+/*works styling ==========================
+*=========================================*/
+.works .works-content .column{
+    width: calc(60% - 30px);
+}
+.works .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-family:cursive;
+}
+.works{
+    background-image: url("../5.jpg");
+    height: 100vh;
+    color: rgb(5, 5, 5);
+    min-height: 1000px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.works .works-content p{
+    font-size: 15px;
+}
+.works .works-content .text{
+    font-size: 55px;
+    font-family: cursive;
+    margin-bottom: 2em;
+    margin-left: -2em;
+}
+.works .works-content .left{
+    width: 65%;
+}
+.works .works-content .left img{
+    height: 600px;
+    width: 450px;
+}
+.works .works-content .link{
+    padding-top: 3rem;
+    margin-left: 5rem;
+}
+.works .works-content .link a{
+    color: #000;
+    font-size: 15px;
+}
+.works .works-content .right{
+    width: 35%;
+    margin-left: 3em;
+}
+.works .works-content .right img{
+    height: 600px;
+    margin-bottom: 10em;
+    width: 400px;
+}
+
+.works .works-content .right p{
+    text-align: justify;
+    margin-top: -20px;
+    font-size: 28px;
+    line-height: 1.5em;
+    letter-spacing: .2em;
+    font-weight: 350;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.works .works-content .bottom-text a{
+    color: #000;
+    font-family: 800;
+    font-size: 18px;
+    margin-left: 1.5rem;
+}
+.works  .bottom-text{
+    border-radius: 20px;
+    margin-left: 20em;  
+    padding: 15px;
+    background: rgb(240, 174, 240);
+    margin-top: 5em;
+}
+
+/* contact section styling */
+.contact{
+    background-image: url("../6.jpg");
+    height: 100vh;
+    color: rgb(5, 5, 5);
+    min-height: 900px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.contact .contact-content .text{
+    font-size: 55px;
+    font-family: cursive;
+    margin-bottom: 1.5em;
+    margin-left: -4.5em;
+}
+.contact .contact-content .contact-head{
+    font-size: 55px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: .05em;
+    margin-bottom: 1em;
+}
+.contact .contact-content .left{
+    width: 55%;
+    margin-left: 15em;
+}
+.contact .contact-content .left p{
+    text-align: justify;
+    font-size: 18px;
+    height: 5em;
+    letter-spacing: .15em;
+    line-height: 1.5em;
+    color: white;
+}
+
+.contact .contact-content .left h2{
+    font-size: 25px;
+    letter-spacing: .1em;
+    line-height: 1em;
+    margin-bottom: 1em;
+}
+.contact .contact-content .left .icon{
+    margin-left: -3em;
+}
+.contact .contact-content .left .icon li{
+    margin:0 20px;
+    margin-top: 3.5em;
+    font-size: 30px;
+    color: white;
+}
+
+.contact .contact-content .left .icon .last-child li{
+    background: rgb(255, 255, 255);
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: rgba(125, 109, 137, 0.722);
+}
+
+.contact .contact-content .right{
+    width: 45%;
+}
+.contact .contact-content .bottom-text a{
+    color: #000;
+    font-family: 800;
+    font-size: 17px;
+    display: flex;
+    margin-left: 1.5rem;
+}
+.contact  .bottom-text{
+    border-radius: 20px;
+    margin-left: 18em;
+    padding: 13px;
+    background: cyan;
+    margin-top: 65em;
+}
+
+.bottom-text:hover{
+    background: #797c7c72;
+}
+
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .right h3{
+        font-size: 20px;
+    }
+    .home .home-content .right h1{
+        font-size: 30px;
+    } 
+     .home .home-content .right a{
+        font-size: 15px;
+        margin-left: -2rem;
+    }
+    .home .home-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .about .about-content .right p{
+        font-size: 18px;
+    }
+    .portfolio .left img, .right img{
+        height: 150px;
+        width: 350px;
+    }
+    .portfolio .right .bottom-text {
+        position: relative;
+        margin-left: -1em;
+    }
+    .portfolio .right .bottom-text a{
+        font-size: 10px;
+    }
+    .works .works-content .text{
+        font-size: 40px;
+        margin-left: 10px;
+    }
+    .works .works-content .left img,
+    .works .works-content .right img{
+        height: 250px;
+        width: 350px;
+    }
+    .works .right .bottom-text a{
+        font-size: 10px;
+    }
+
+    .skills .skills-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    .contact .contact-content .column{
+        height: 100%;
+    }
+    .contact .contact-content .text {
+        font-size: 35px;
+    }
+    .contact .contact-content .contact-head,
+    .contact .contact-content p,
+    .contact .contact-content h2{
+        margin-left: -4em;
+    }
+    .contact .contact-content .contact-head{
+        font-size: 25px;
+    }
+    .contact .contact-content .left h2{
+        font-size: 20px;
+    }
+    .contact .contact-content .left p{
+        font-size: 15px;
+        margin-left: -10em;
+        
+    }
+    .contact .contact-content .icon{
+        display: flex;
+        margin-right: 30px;
+        font-size: 10px;
+    }
+    
+    .contact .contact-content .right .bottom-text{
+        position: relative;
+        top: -60em;
+        left: -15em;
+        width: 70%;
+    }
+    .contact .right .bottom-text a{
+        font-size: 15px;
+    }
+    .contact {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 15px;
+    }
+    .project .serv-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .skills .skills-content .left .text{
+        font-size: 19px;
+    }
+    .contact .icon{
+        flex-direction: row;
+        margin-left: -2em;
+    }
+    .contact .icon .a{
+        font-size: 10px;
+    }
+   
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
